@@ -1,0 +1,22 @@
+port: 8081
+base:
+  app_id: 'go-cqrs-demo'
+  env: production
+logging:
+  level: error
+  format: console
+database:
+  dsn: 'postgres://postgres:test@localhost:5432/order'
+  driver: pgx
+  max_conn: 8
+kafka:
+  brokers: ['localhost:9092']
+security:
+  cors: ['*']
+event_sourcing:
+  host: localhost
+  port: 6379
+event_topics:
+  order_created: order
+  order_confirmed: order
+  order_canceled: order

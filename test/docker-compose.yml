@@ -1,0 +1,20 @@
+version: '3'
+services:
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
+      - ./grafana/dashboard:/etc/grafana/dashboard
+    ports:
+      - '3000:3000'
+
+  influxdb:
+    image: influxdb:1.8
+    ports:
+      - '8086:8086'
+    environment: 
+      - INFLUXDB_DB=k6test

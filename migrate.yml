@@ -1,0 +1,9 @@
+base:
+  app_id: 'migrate'
+  env: development
+database:
+  dsn: 'postgres://postgres:test@localhost:5432/order'
+  driver: pgx
+  max_conn: 8
+kafka_admin:
+  brokers: ['localhost:9092']

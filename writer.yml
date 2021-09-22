@@ -1,0 +1,16 @@
+base:
+  app_id: 'go-cqrs-demo-writer'
+  env: production
+logging:
+  level: info
+  format: console
+database:
+  dsn: 'postgres://postgres:test@localhost:5432/order'
+  driver: pgx
+  max_conn: 8
+kafka_consumer:
+  brokers: ['localhost:9092']
+  consumer_group: order_writer
+  topics: ['order']
+kafka_producer:
+  brokers: ['localhost:9092']

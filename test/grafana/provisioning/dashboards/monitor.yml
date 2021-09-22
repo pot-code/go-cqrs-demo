@@ -1,0 +1,10 @@
+# config file version
+apiVersion: 1
+
+providers:
+  - name: 'K6 Test Result'
+    type: file
+    orgId: 1
+    allowUiUpdates: false
+    options:
+      path: /etc/grafana/dashboard/K6_Test_Result.json
